@@ -2,22 +2,22 @@
 /**
  * Plugin Name: SCB - Sticky Chat Button
  * Plugin URI: https://github.com/carmelyne/scb-sticky-chat-button
- * Description: Adds a customizable sticky chat button in a bubble style to your WordPress site.
- * Version: 1.0.0
- * Author: Carmelyne Thompson
+ * Description: Adds a customizable sticky Facebook Messenger chat button in a bubble style to your WordPress site.
+ * Version: 1.0.1
+ * Author: Carmelyne M. Thompson
  * Author URI: https://carmelyne.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * GitHub Plugin URI: https://github.com/carmelyne/scb-sticky-chat-button
+ * GitHub Branch: main
  */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-// Include WordPress GitHub Plugin Updater
-if (!class_exists('Smashing_Updater')) {
-    include_once(plugin_dir_path(__FILE__) . 'updater.php');
-}
+// Include updater
+require_once plugin_dir_path(__FILE__) . 'updater.php';
 
 class SCB_Sticky_Chat_Button {
     public function __construct() {
@@ -29,15 +29,15 @@ class SCB_Sticky_Chat_Button {
         // Initialize GitHub Updater
         if (class_exists('Smashing_Updater')) {
             $updater = new Smashing_Updater(__FILE__);
-            $updater->set_username('yourusername');
+            $updater->set_username('carmelyne');
             $updater->set_repository('scb-sticky-chat-button');
             $updater->initialize();
         }
     }
 
     public function enqueue_scripts() {
-        wp_enqueue_style('scb-sticky-chat-button', plugin_dir_url(__FILE__) . 'css/scb-sticky-chat-button.css', array(), '1.0.0');
-        wp_enqueue_script('scb-sticky-chat-button', plugin_dir_url(__FILE__) . 'js/scb-sticky-chat-button.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_style('scb-sticky-chat-button', plugin_dir_url(__FILE__) . 'css/scb-sticky-chat-button.css', array(), '1.0.1');
+        wp_enqueue_script('scb-sticky-chat-button', plugin_dir_url(__FILE__) . 'js/scb-sticky-chat-button.js', array('jquery'), '1.0.1', true);
     }
 
     public function render_button() {

@@ -53,10 +53,22 @@ Yes, the sticky chat button is designed to always be visible, typically in the b
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed WordPress updater functionality
+
+= 1.0.1 =
+* Updated default URL to use Facebook Messenger format
+
 = 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+This version fixes the WordPress updater. You should now receive automatic update notifications.
+
+= 1.0.1 =
+This version updates the default URL to use the Facebook Messenger format. Update recommended for new installations.
 
 = 1.0.0 =
 Initial release of SCB - Sticky Chat Button.
