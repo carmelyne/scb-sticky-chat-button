@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: SCB - Sticky Chat Button
- * Plugin URI: https://github.com/carmelyne/scb-sticky-chat-button
- * Description: Adds a customizable sticky chat FB Messenger Button in a bubble style to your WordPress site.
+ * Plugin URI: https://github.com/yourusername/scb-sticky-chat-button
+ * Description: Adds a customizable sticky chat button in a bubble style to your WordPress site.
  * Version: 1.0.0
- * Author: Carmelyne M. Thompson
- * Author URI: https://carmelyne.com
+ * Author: Your Name
+ * Author URI: https://example.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -41,10 +41,10 @@ class SCB_Sticky_Chat_Button {
     }
 
     public function render_button() {
-        $button_url = get_option('scb_button_url', '#');
+        $button_url = get_option('scb_button_url', 'https://m.me/your_user_name');
         $bubble_color = get_option('scb_bubble_color', '#0084ff');
         $background_color = get_option('scb_background_color', '#ffffff');
-    
+
         echo '<div id="scb-sticky-chat-button-wrapper">';
         echo '<a href="' . esc_url($button_url) . '" target="_blank" id="scb-sticky-chat-button" style="background-color: ' . esc_attr($background_color) . ';">';
         echo '<svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" fill="' . esc_attr($bubble_color) . '">';
@@ -74,7 +74,10 @@ class SCB_Sticky_Chat_Button {
                 <table class="form-table">
                     <tr valign="top">
                         <th scope="row">Button URL</th>
-                        <td><input type="text" name="scb_button_url" value="<?php echo esc_attr(get_option('scb_button_url')); ?>" /></td>
+                        <td>
+                            <input type="text" name="scb_button_url" value="<?php echo esc_attr(get_option('scb_button_url', 'https://m.me/your_user_name')); ?>" />
+                            <p class="description">Enter your Facebook Messenger URL. Format: https://m.me/your_user_name</p>
+                        </td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">Bubble Color</th>
@@ -99,7 +102,7 @@ new SCB_Sticky_Chat_Button();
 register_activation_hook(__FILE__, 'scb_sticky_chat_button_activate');
 function scb_sticky_chat_button_activate() {
     // Set default options
-    add_option('scb_button_url', '#');
+    add_option('scb_button_url', 'https://m.me/your_user_name');
     add_option('scb_bubble_color', '#0084ff');
     add_option('scb_background_color', '#ffffff');
 }
