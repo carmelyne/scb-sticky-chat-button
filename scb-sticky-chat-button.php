@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: SCB - Sticky Chat Button
- * Plugin URI: https://github.com/yourusername/scb-sticky-chat-button
+ * Plugin URI: https://github.com/carmelyne/scb-sticky-chat-button
  * Description: Adds a customizable sticky chat button in a bubble style to your WordPress site.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://example.com
+ * Author: Carmelyne Thompson
+ * Author URI: https://carmelyne.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
